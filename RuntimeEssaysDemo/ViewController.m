@@ -10,6 +10,7 @@
 #import <objc/message.h>
 #import "Person.h"
 #import "Person+Custom.h"
+#import "NSObject+Custom.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,7 @@
 
 @implementation ViewController
 
+/*
 + (void)initialize {
     SEL swizzledSel = @selector(viewDidLoad);
     SEL customSel = @selector(customLoad);
@@ -35,6 +37,8 @@
     
 }
 
+*/
+
 - (void)viewDidLoad {
     
     NSLog(@"==>%s", __FUNCTION__);
@@ -47,8 +51,24 @@
     per.name = @"123";
     NSLog(@"%@", per.name);
 */
+    
+    Person *per = [[Person alloc] initWithDic:@{@"user_id" : @"123", @"age" : @12}];
+    NSLog(@"self->isa:%@", object_getClass(per));
+    NSLog(@"self class: %@", per.class);
+//    [per addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+    [per bk_addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
 
+    NSLog(@"addObserver self->isa:%@", object_getClass(per));
+    NSLog(@"addObserver self class: %@", per.class);
+    per.name = @"block";
+
+    
 }
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    NSLog(@"obj = %@", object);
+}
+
 
 - (void)customLoad {
     NSLog(@"==>dddadd%s", __FUNCTION__);

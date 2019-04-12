@@ -11,12 +11,12 @@
 
 @implementation Person (Custom)
 
-- (void)setName:(NSString *)name {
-    objc_setAssociatedObject(self, "name", name, OBJC_ASSOCIATION_COPY_NONATOMIC);
+- (void)setClass_name:(NSString *)class_name {
+    objc_setAssociatedObject(self, "class_name", class_name, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
-- (NSString *)name {
-    return objc_getAssociatedObject(self, "name");
+- (NSString *)class_name {
+    return objc_getAssociatedObject(self, "class_name");
 }
 
 @end

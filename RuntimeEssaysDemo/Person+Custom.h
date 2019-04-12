@@ -10,6 +10,6 @@
 
 @interface Person (Custom)
 
-@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *class_name;
 
 @end

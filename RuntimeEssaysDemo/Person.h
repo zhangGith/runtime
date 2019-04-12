@@ -10,4 +10,10 @@
 
 @interface Person : NSObject
 
+@property (nonatomic, copy) NSString *user_id;
+@property (nonatomic, assign) NSInteger age;
+@property (nonatomic, copy) NSString *name;
+
+- (instancetype)initWithDic:(NSDictionary *)dict;
+
 @end
