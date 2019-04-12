@@ -17,16 +17,46 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
++ (void)initialize {
+    SEL swizzledSel = @selector(viewDidLoad);
+    SEL customSel = @selector(customLoad);
     
+    Class class = [self class];
+    
+    Method customMethod = class_getInstanceMethod(class, customSel);
+    Method swizzMethod = class_getInstanceMethod(class, swizzledSel);
+    
+    BOOL didAddMethod = class_addMethod(class, swizzledSel, method_getImplementation(swizzMethod), method_getTypeEncoding(swizzMethod));
+    if (didAddMethod) {
+        class_replaceMethod(class, swizzledSel, method_getImplementation(swizzMethod), method_getTypeEncoding(swizzMethod));
+    } else {
+        method_exchangeImplementations(customMethod, swizzMethod);
+    }
+    
+}
+
+- (void)viewDidLoad {
+    
+    NSLog(@"==>%s", __FUNCTION__);
+    
+    [super viewDidLoad];
+/*
     [self performSelector:@selector(foo)];
     
     Person *per = [Person new];
     per.name = @"123";
     NSLog(@"%@", per.name);
-    
+*/
+
 }
+
+- (void)customLoad {
+    NSLog(@"==>dddadd%s", __FUNCTION__);
+
+}
+
+
+/*
 
 void fooMethod(id obj, SEL _cmd) {
     NSLog(@"foo method");
@@ -67,5 +97,6 @@ void fooMethod(id obj, SEL _cmd) {
     }
     
 }
+ */
 
 @end
