@@ -15,6 +15,8 @@
 		F947330422603DBF00213B56 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F947330322603DBF00213B56 /* main.m */; };
 		F947330E22603DC100213B56 /* RuntimeEssaysDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F947330D22603DC100213B56 /* RuntimeEssaysDemoTests.m */; };
 		F947331922603DC100213B56 /* RuntimeEssaysDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F947331822603DC100213B56 /* RuntimeEssaysDemoUITests.m */; };
+		F9473328226062C900213B56 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = F9473327226062C900213B56 /* Person.m */; };
+		F947332B22606E1300213B56 /* Person+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = F947332A22606E1300213B56 /* Person+Custom.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		F947331422603DC100213B56 /* RuntimeEssaysDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RuntimeEssaysDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F947331822603DC100213B56 /* RuntimeEssaysDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeEssaysDemoUITests.m; sourceTree = "<group>"; };
 		F947331A22603DC100213B56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9473326226062C900213B56 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		F9473327226062C900213B56 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		F947332922606E1300213B56 /* Person+Custom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+Custom.h"; sourceTree = "<group>"; };
+		F947332A22606E1300213B56 /* Person+Custom.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+Custom.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,10 @@
 				F94732F522603DA100213B56 /* AppDelegate.m */,
 				F94732F722603DA100213B56 /* ViewController.h */,
 				F94732F822603DA100213B56 /* ViewController.m */,
+				F9473326226062C900213B56 /* Person.h */,
+				F9473327226062C900213B56 /* Person.m */,
+				F947332922606E1300213B56 /* Person+Custom.h */,
+				F947332A22606E1300213B56 /* Person+Custom.m */,
 				F94732FA22603DA100213B56 /* Main.storyboard */,
 				F94732FD22603DBF00213B56 /* Assets.xcassets */,
 				F94732FF22603DBF00213B56 /* LaunchScreen.storyboard */,
@@ -264,6 +274,8 @@
 			files = (
 				F94732F922603DA100213B56 /* ViewController.m in Sources */,
 				F947330422603DBF00213B56 /* main.m in Sources */,
+				F947332B22606E1300213B56 /* Person+Custom.m in Sources */,
+				F9473328226062C900213B56 /* Person.m in Sources */,
 				F94732F622603DA100213B56 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,7 +382,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -422,7 +434,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
