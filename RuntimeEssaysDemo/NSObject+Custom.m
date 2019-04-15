@@ -28,7 +28,7 @@
 }
 
 - (void)bk_observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
-    
+    NSLog(@"------> %@", object);
 }
 
 void setName(id self, SEL _cmd, NSString *str) {

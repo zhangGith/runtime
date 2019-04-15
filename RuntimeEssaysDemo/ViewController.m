@@ -65,11 +65,6 @@
     
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
-    NSLog(@"obj = %@", object);
-}
-
-
 - (void)customLoad {
     NSLog(@"==>dddadd%s", __FUNCTION__);
 
